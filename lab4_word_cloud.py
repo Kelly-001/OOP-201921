@@ -30,7 +30,12 @@ class WordCloud:
             <div style="text-align: center; vertical-align: middle; font-family: arial; color: white; background-color:black; border:1px solid black">')
 
         # your code goes here!
-        fo.write('<span style="font-size: 10px"> HELLO </span>')
+        for key in the_dict.keys():
+            fo.write('<span style="font-size: '
+            fo.write(str(the_dict[key] * 10))
+            fo.write('px">')
+            fo.write(key)
+            fo.write('</span>')
 
         fo.write('</div>\
             </body>\
@@ -48,6 +53,17 @@ class WordCloud:
     def create_dict(self):
         my_dict = {}
         # your code goes here:
+        file = open(r'C:\Users\manki\OOP-201921\gettisburg.txt','r')
+        for line in file:
+            line = line.lower()
+            line = line.split()
+
+            for word in line:
+                self.add_to_dict(word,my_dict)
+        file.close()
+
+        print(my_dict.items())
+
 
         return my_dict
 
@@ -60,8 +76,13 @@ class WordCloud:
     # returns a dictionary
     def add_to_dict(self, word, the_dict):
         # your code goes here
+        for keys in the_dict.keys():
+            if keys == word:
+                the_dict[keys] = the_dict[keys] + 1
+                return the_dict
+        else:
+            the_dict[word] = 1
 
         return the_dict
-
 
 wc = WordCloud()

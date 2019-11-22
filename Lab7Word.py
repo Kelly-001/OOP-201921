@@ -1,8 +1,8 @@
 # course: Object-oriented programming, year 2, semester 1
 # academic year: 201920
-# author: B. Schoen-Phelan
-# date: 08-10-2019
-# purpose: Lab 3
+# author: Kelly Luu
+# date: 20-11-2019
+# purpose: Lab 7
 
 import string
 
